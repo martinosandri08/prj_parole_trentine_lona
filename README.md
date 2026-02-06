@@ -35,4 +35,4 @@ Scuola: **Istituto Tecnico Tecnologico Michelangelo Buonarroti Trento**
 Anno scolastico: **2025-2026**
 
 ## Note
-Il progetto ha un scopo puramente divulgativo della cultura della città di Trento..
+Il progetto ha un scopo puramente divulgativo della cultura della città di Trento.
