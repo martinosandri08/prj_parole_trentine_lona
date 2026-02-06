@@ -13,7 +13,7 @@ Il lavoro serve a far conoscere meglio la cultura e le tradizioni linguistiche d
 
 ## Contenuto del progetto
 Nel progetto sono presenti:
-- Un'enciclopedia con oltre 15.000 termini, destinati a crescere
+- Un'enciclopedia con oltre 15.000 termini, in continuo aggiornamento 
 - Un modalità di traduzione italiano-dialetto e viceversa
 - Un elenco delle terminologie completo di significato, classe grammaticale, esempio, immagine e audio esplicativi
 
@@ -23,6 +23,8 @@ Nel progetto sono presenti:
 - Canva
 - Google Drive
 - Visual Studio Code
+- Trello
+- GanntProject
 
 ## Autori
 Progetto realizzato da:  
