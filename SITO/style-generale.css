@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    background-image: url(Foto/nuovoSfondo.png);
+    background-image: url(Foto/sfondoSfumato.jpg);
+    background-repeat: no-repeat;
 }
 
 header {
