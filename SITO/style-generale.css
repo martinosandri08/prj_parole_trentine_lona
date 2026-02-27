@@ -129,15 +129,17 @@ ul li a:hover{
 .pagINFO p{
     text-align: left;
     margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 0px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
 }
 
 .pagINFO h3{
     text-align: left;
     margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 25px;
     margin-bottom: 0px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
 }
