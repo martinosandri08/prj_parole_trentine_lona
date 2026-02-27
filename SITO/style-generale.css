@@ -116,15 +116,28 @@ ul li a:hover{
     opacity: 75%;
     border-radius: 50px;
     margin-top: 30px;
+    padding-top: 5px;
     
-    display: grid;
     justify-items: left;
-
+    display: flexbox;
     justify-self: center;
     align-items: center;
     background-color: aliceblue;
+
 }
 
-.p{
-    
+.pagINFO p{
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.pagINFO h3{
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
