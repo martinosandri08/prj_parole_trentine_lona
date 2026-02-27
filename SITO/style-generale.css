@@ -107,3 +107,24 @@ ul li a:hover{
     background-color: yellow;
     
 }
+
+/* style per pagina informazioni*/
+
+.pagINFO{
+    width: 90%;
+    height: 500px;
+    opacity: 75%;
+    border-radius: 50px;
+    margin-top: 30px;
+    
+    display: grid;
+    justify-items: left;
+
+    justify-self: center;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.p{
+    
+}
