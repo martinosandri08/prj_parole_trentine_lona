@@ -76,19 +76,50 @@ ul li a:hover{
 }
 
 .pagine{
-    width: 75%;
+    width: 90%;
     height: 500px;
-    opacity: 80%;
+    opacity: 75%;
     border-radius: 50px;
     margin-top: 30px;
-
-    align-content: center;
+    
+    display: grid;
+    
     justify-items: center;
     justify-self: center;
-    background-color: #ffffff;
+    align-items: center;
+    background-color: aliceblue;
 }
 
-.pagine h1{
-    font-size: 50px;
-    margin: 0;
+/* style per pagina informazioni*/
+
+.pagINFO{
+    width: 90%;
+    height: 500px;
+    opacity: 75%;
+    border-radius: 50px;
+    margin-top: 30px;
+    padding-top: 5px;
+    
+    justify-items: left;
+    display: flexbox;
+    justify-self: center;
+    align-items: center;
+    background-color: aliceblue;
+
+}
+
+.pagINFO p{
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.pagINFO h3{
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
