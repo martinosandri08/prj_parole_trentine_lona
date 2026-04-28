@@ -9,17 +9,20 @@
 /* ── Variabili CSS (palette e tipografia) ── */
 :root {
   /* Colori principali */
-  --clr-cream:       #f5f0e8;       /* sfondo principale caldo */
-  --clr-parchment:   #ede5d3;       /* sfondo secondario */
-  --clr-forest:      #2d4a2d;       /* verde bosco trentino */
-  --clr-forest-lt:   #3d6b3d;       /* verde più chiaro */
-  --clr-terracotta:  #b85c38;       /* terracotta / accento */
-  --clr-gold:        #c9a84c;       /* oro / accento secondario */
-  --clr-dark:        #1a1a14;       /* testo scuro */
-  --clr-mid:         #4a4a3a;       /* testo medio */
-  --clr-light-text:  #7a7a65;       /* testo chiaro / caption */
-  --clr-border:      #d4c9b0;       /* bordi sottili */
-  --clr-white:       #ffffff;
+  --clr-cream:       #fffbea;       /* sfondo principale chiaro */
+  --clr-parchment:   #f8f2d7;       /* sfondo secondario chiaro */
+  --clr-forest:      #0f3d91;       /* blu profondo */
+  --clr-forest-lt:   #2e5bbf;       /* blu più chiaro */
+  --clr-terracotta:  #f4c430;       /* giallo sole */
+  --clr-gold:        #ffde44;       /* giallo brillante */
+  --clr-dark:        #07153b;       /* testo scuro */
+  --clr-mid:         #274280;       /* testo medio */
+  --clr-light-text:  rgba(255,255,255,.88); /* testo chiaro */
+  --clr-border:      rgba(255,255,255,.16); /* bordi sottili */
+  --clr-white:       rgba(255,255,255,.96);
+  --clr-card:        rgba(255,255,255,.14);
+  --clr-glass:       rgba(255,255,255,.16);
+  --clr-glass-strong:rgba(255,255,255,.22);
 
   /* Tipografia */
   --font-display: 'Playfair Display', Georgia, serif;
@@ -67,7 +70,8 @@ body {
   position: relative;
   font-family: var(--font-body);
   color: var(--clr-dark);
-  line-height: 1.7;
+  font-size: 1.08rem;
+  line-height: 1.85;
   min-height: 100%;
   background: transparent !important;
 }
@@ -108,9 +112,9 @@ body::before {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(45,74,45,.97);
-  backdrop-filter: blur(8px);
-  border-bottom: 2px solid var(--clr-gold);
+  background: rgba(6,21,59,.93);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--clr-terracotta);
   box-shadow: var(--shadow-md);
 }
 
@@ -118,7 +122,21 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 0;
+  padding: 0.85rem 0;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,.85);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(244,196,48,.15);
+  color: var(--clr-terracotta);
+}
+
+.nav-toggle span {
+  background: var(--clr-terracotta);
 }
 
 /* Logo testuale nella navbar */
@@ -142,7 +160,7 @@ body::before {
   font-family: var(--font-ui);
   font-size: 0.65rem;
   font-weight: 300;
-  color: rgba(245,240,232,.7);
+  color: rgba(255,255,255,.82);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -171,7 +189,7 @@ body::before {
 
 .nav-links a:hover,
 .nav-links a.active {
-  background: rgba(201,168,76,.2);
+  background: rgba(244,196,48,.18);
   color: var(--clr-gold);
 }
 
@@ -203,50 +221,61 @@ body::before {
 /* ── HEADER HERO ── */
 #site-header {
   background-image:
-    linear-gradient(160deg, rgba(26,48,26,.88) 0%, rgba(20,32,20,.76) 100%),
+    linear-gradient(160deg, rgba(41,104,204,.68) 0%, rgba(90,140,220,.58) 100%),
     url("Foto/nuovoSfondo.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   padding: var(--space-xl) 0 var(--space-lg);
+  min-height: 520px;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-/* Decorazione montagne stilizzate */
+/* Decorative overlay for readability */
 #site-header::before {
   content: '';
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 60px;
-  background: var(--clr-cream);
-  clip-path: polygon(0 100%, 10% 40%, 20% 70%, 35% 20%, 50% 60%, 65% 10%, 78% 55%, 88% 30%, 100% 60%, 100% 100%);
+  inset: 0;
+  background: radial-gradient(circle at 25% 25%, rgba(255,255,255,.22), transparent 20%),
+              radial-gradient(circle at 80% 30%, rgba(255,255,255,.14), transparent 18%),
+              linear-gradient(180deg, rgba(7,30,76,.06) 0%, rgba(7,30,76,.18) 100%);
+  pointer-events: none;
 }
 
 .header-content {
   position: relative;
   z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 2.5rem;
+  background: rgba(4,19,60,.40);
+  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(16px);
 }
 
 .header-pretitle {
   font-family: var(--font-ui);
-  font-size: 0.75rem;
-  font-weight: 300;
-  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--clr-gold);
+  color: rgba(255,255,255,.90);
   margin-bottom: var(--space-sm);
+  text-shadow: 0 3px 12px rgba(0,0,0,.3);
 }
 
 .site-title {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  font-size: clamp(3rem, 8vw, 5.5rem);
   font-weight: 700;
-  color: var(--clr-cream);
-  line-height: 1;
-  letter-spacing: -0.02em;
+  color: #ffffff;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 
 .site-title em {
@@ -256,16 +285,51 @@ body::before {
 
 .site-subtitle {
   font-family: var(--font-body);
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  font-style: italic;
-  color: rgba(245,240,232,.7);
-  margin-top: 0.5rem;
-  letter-spacing: 0.04em;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-style: normal;
+  color: rgba(255,255,255,.95);
+  margin-top: 0.75rem;
+  letter-spacing: 0.02em;
+  text-shadow: 0 4px 18px rgba(0,0,0,.28);
 }
 
 /* ── SEZIONI GENERICHE ── */
 section {
   padding: var(--space-xl) 0;
+}
+
+.content-section {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 28px;
+  padding: calc(var(--space-xl) + 0.5rem);
+  box-shadow: 0 18px 50px rgba(3,24,70,.12);
+  backdrop-filter: blur(18px);
+  margin-bottom: var(--space-xl);
+}
+
+.content-section p,
+.content-section ul,
+.content-section ol,
+.content-section .highlight-box,
+.team-card,
+.card,
+.search-wrapper,
+.suggest-form,
+.form-field input,
+.form-field select,
+.form-field textarea {
+  color: var(--clr-dark);
+}
+
+.content-section > p {
+  background: rgba(255,255,255,.22);
+  border-radius: 18px;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(255,255,255,.16);
+  line-height: 1.9;
+  max-width: 860px;
+  margin: 0 auto 1.4rem;
 }
 
 .section-title {
@@ -300,17 +364,46 @@ section {
 
 /* ── CARD GENERICA ── */
 .card {
-  background: var(--clr-white);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-md);
+  background: var(--clr-card);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: var(--radius-lg);
   padding: var(--space-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 18px 35px rgba(3,24,70,.1);
   transition: box-shadow var(--transition), transform var(--transition);
+  backdrop-filter: blur(16px);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  box-shadow: 0 22px 52px rgba(3,24,70,.14);
+  transform: translateY(-3px);
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(244,196,48,.14), rgba(255,255,255,.12));
+  border: 1px solid rgba(255,255,255,.18);
+  border-left: 4px solid var(--clr-terracotta);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin: var(--space-md) 0;
+  backdrop-filter: blur(18px);
+}
+
+.highlight-box.terracotta {
+  background: linear-gradient(135deg, rgba(244,196,48,.12), rgba(15,61,145,.1));
+  border-color: rgba(244,196,48,.4);
+  border-left-color: var(--clr-terracotta);
+}
+
+.search-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--space-lg);
+  border-radius: 28px;
+  background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 30px 70px rgba(3,24,70,.15);
+  backdrop-filter: blur(18px);
 }
 
 /* ── BADGE / CHIP ── */
@@ -388,7 +481,7 @@ section {
 /* ── FOOTER ── */
 #site-footer {
   background: var(--clr-dark);
-  color: rgba(245,240,232,.7);
+  color: rgba(255,255,255,.82);
   padding: var(--space-xl) 0 var(--space-lg);
   font-family: var(--font-ui);
   font-size: 0.85rem;
@@ -411,7 +504,7 @@ section {
 .footer-brand p {
   margin-top: var(--space-sm);
   line-height: 1.6;
-  color: rgba(245,240,232,.6);
+  color: rgba(255,255,255,.78);
 }
 
 .footer-col h4 {
@@ -433,7 +526,7 @@ section {
 }
 
 .footer-col a {
-  color: rgba(245,240,232,.6);
+  color: rgba(255,255,255,.82);
   text-decoration: none;
   transition: color var(--transition);
 }

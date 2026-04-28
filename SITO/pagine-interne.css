@@ -5,7 +5,7 @@
 
 /* ── HERO PAGINE INTERNE ── */
 .page-hero {
-  background: linear-gradient(160deg, var(--clr-forest) 0%, #213521 100%);
+  background: linear-gradient(160deg, rgba(24,66,139,.88) 0%, rgba(50,99,177,.78) 100%);
   padding: var(--space-xl) 0 var(--space-xxl);
   text-align: center;
   position: relative;
@@ -18,7 +18,7 @@
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 70px;
-  background: var(--clr-cream);
+  background: rgba(255,255,255,.12);
   clip-path: ellipse(60% 100% at 50% 100%);
 }
 
@@ -89,6 +89,8 @@
 /* ── CONTENUTO PAGINE ── */
 .page-content {
   min-width: 0; /* evita overflow in grid */
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 /* Sezione articolo */
@@ -96,6 +98,19 @@
   padding: var(--space-xl) 0;
   border-bottom: 1px solid var(--clr-border);
   scroll-margin-top: 90px; /* offset per la navbar sticky */
+  text-align: center;
+}
+
+.content-section p,
+.content-section ul,
+.content-section ol,
+.content-section .highlight-box,
+.content-section table,
+.page-content > .highlight-box,
+.page-content > .team-grid {
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .content-section:last-child { border-bottom: none; }
@@ -108,6 +123,7 @@
   margin-bottom: var(--space-md);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
 }
 
@@ -120,23 +136,28 @@
   line-height: 1.8;
   color: var(--clr-mid);
   margin-bottom: var(--space-md);
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .content-section p:last-child { margin-bottom: 0; }
 
 /* ── BLOCCO EVIDENZIATO ── */
 .highlight-box {
-  background: linear-gradient(135deg, rgba(45,74,45,.06), rgba(201,168,76,.08));
-  border: 1px solid rgba(45,74,45,.2);
-  border-left: 4px solid var(--clr-forest);
-  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(244,196,48,.14), rgba(255,255,255,.12));
+  border: 1px solid rgba(255,255,255,.18);
+  border-left: 4px solid var(--clr-terracotta);
+  border-radius: var(--radius-lg);
   padding: var(--space-lg);
   margin: var(--space-md) 0;
+  backdrop-filter: blur(16px);
 }
 
 .highlight-box.terracotta {
-  background: linear-gradient(135deg, rgba(184,92,56,.06), rgba(201,168,76,.05));
-  border-color: rgba(184,92,56,.2);
+  background: linear-gradient(135deg, rgba(244,196,48,.12), rgba(15,61,145,.1));
+  border-color: rgba(244,196,48,.4);
   border-left-color: var(--clr-terracotta);
 }
 
@@ -232,7 +253,7 @@
 .form-field textarea:focus {
   outline: none;
   border-color: var(--clr-forest);
-  box-shadow: 0 0 0 3px rgba(45,74,45,.08);
+  box-shadow: 0 0 0 3px rgba(15,61,145,.12);
 }
 
 .form-field textarea {
@@ -246,8 +267,8 @@
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-md);
-  background: rgba(45,74,45,.1);
-  border: 1px solid rgba(45,74,45,.3);
+  background: rgba(15,61,145,.08);
+  border: 1px solid rgba(15,61,145,.24);
   border-radius: var(--radius-md);
   color: var(--clr-forest);
   font-family: var(--font-ui);
@@ -294,6 +315,7 @@
   padding: var(--space-lg);
   box-shadow: var(--shadow-sm);
   transition: box-shadow var(--transition), transform var(--transition);
+  text-align: center;
 }
 
 .team-card:hover {
