@@ -148,6 +148,35 @@
       </div>
     </section>
 
+    <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "etrentin";
+
+try {
+    // Creazione della connessione
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // Impostazione dell'errore PDO su eccezione
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stm = $conn->prepare("SELECT * FROM voci_dizionario WHERE id < 10;");
+    $stm->execute();
+    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($result as $row) {
+    echo "<table border=2><tr><td>" . $row['voce'] . "</td></tr></table>";
+
+}
+
+    echo "Connessione riuscita";
+} catch(PDOException $e) {
+    echo "Connessione fallita: " . $e->getMessage();
+}
+// Chiusura connessione
+$conn = null;
+
+?>
+
+
 
     <!-- ══════════════════════════════════════════
          RISULTATI RICERCA (nascosta all'inizio)
@@ -411,25 +440,7 @@
 </body>
 </html>
 
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "etrentin";
 
-try {
-    // Creazione della connessione
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    // Impostazione dell'errore PDO su eccezione
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connessione riuscita";
-} catch(PDOException $e) {
-    echo "Connessione fallita: " . $e->getMessage();
-}
-// Chiusura connessione
-$conn = null;
-
-?>
 
 
 
