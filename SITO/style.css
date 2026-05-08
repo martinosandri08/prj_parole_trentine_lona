@@ -543,18 +543,18 @@ section {
 
 .footer-logos {
   display: flex;
-  gap: var(--space-sm);
+  gap: 15px;
   align-items: center;
-  background: white;
-  padding: 10px;
-  border-radius: 8px;
   justify-content: center;
 }
 
 .footer-logo {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
 }
 
 /* ── ANIMAZIONI ── */
@@ -624,12 +624,13 @@ section {
   }
 
   .footer-logos {
-    gap: var(--space-md);
+    gap: 10px;
   }
 
   .footer-logo {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
+    padding: 8px;
   }
 }
 
