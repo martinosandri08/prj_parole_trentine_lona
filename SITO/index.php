@@ -149,13 +149,14 @@
     </section>
 
     <?php
-$servername = "localhost";
+$servername = "db";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "etrentin";
 
 try {
     // Creazione della connessione
+    $HOST =   
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     // Impostazione dell'errore PDO su eccezione
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
