@@ -149,9 +149,9 @@
     </section>
 
     <?php
-$servername = "db";
+$servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "etrentin";
 
 try {
